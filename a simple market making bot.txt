@@ -1,0 +1,36 @@
+Variables:
+
+Ticker name, example BTC/USDT 
+
+Quote Size: 
+
+Spread:
+
+Depth: number of layers to quote, default==1
+ 
+LastPrice: Last traded price
+
+Theooffset: a float type variable. default==0
+
+TheoPrice: Theoprice=LastPrice+Theooffset
+/////////////////////////////////////////
+Base currency: example USDT
+ 
+Quote Currency: example BTC 
+
+Trade time:Time when trade occurred in Epoch time.
+
+Trade Size: size of the trade
+
+Direction: Buy/Sell
+
+
+Strategy:
+
+Provides Bid/Ask around TheoPrice given above variables. 
+
+
+record all trades and tick data, i.e. updates on orderbooks and trades. 
+
+
+
