@@ -7,10 +7,17 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+<<<<<<< HEAD
 # import statsmodels.api as sm
 #import/formating data 
 sourcefile =read_in_file
 #sourcefile =open("F:\\Bitcoins\\Binance_IOTXBTC.json")
+=======
+import matplotlib.pyplot as plt
+# import statsmodels.api as sm
+#import/formating data 
+sourcefile =open("D:\\bitrepo\\Pumpdump&needlecatcher\\Feb-Apl\\Binance_AMBBTC.json")
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
 # sourcefile =open("C:\\Users\\Hao\\Desktop\\bitrepo\\Pumpdump&needlecatcher\\Binance_LUNBTC.json")
 #sourcefile =open("C:\\Projects\\hao_sweetbytes\\Pumpdump&needlecatcher\\Binance_LUNBTC.json")
 data=json.load(sourcefile)
@@ -97,7 +104,11 @@ while i<ll:
     if combo[i-1]==1 and position[i-1]==0 and buysum==0 :  # and df2["V30"][i-1]>df2["V30"][i-2]
         b=min(df2["V"][i]*0.25*df2["P"][i],10) #assuming buying only 25% of all avialable volume or a max of 10, for risk reasons. 
         buy[i]=b
+<<<<<<< HEAD
         fees[i]=buy[i]*df2["P"][i]*0.00075 #7.5 bps as fees
+=======
+        fees[i]=buy[i]*df2["P"][i]*0.00075
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
         target=selltheo[i]
         pnl[i]=pnl[i]-fees[i]
     if i>=10:
@@ -115,7 +126,11 @@ print(a)
 Var3 = np.vstack ((signal1,signal2,buytheo,selltheo,buy,sell,asset,position,pnl,fees)). T 
 df3=pd.DataFrame(Var3,index=df['Time'][c-1+ma+pre:],columns=['signal1','signal2','buytheo','selltheo','buy','sell','asset','position','pnl','fees'])
 df2=df2.join(df3)
+<<<<<<< HEAD
 df2.to_csv(r'{}').format(w)
+=======
+df2.to_csv(r'C:\\Users\\Athan\\Desktop\\bitrepo\\Pumpdump&needlecatcher\\Binance_BLZBTC.csv')
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
 #df2.to_csv(r'C:\\Users\\Hao\\Desktop\\bitrepo\\Pumpdump&needlecatcher\\Binance_LUNBTC.csv')
 #define a buying strategy with 10 BTC under management
 #if signal, buy half the volume
@@ -124,11 +139,22 @@ df2.to_csv(r'{}').format(w)
 #filtering out big numbers
 #construct a preliminary rule
 #test the result 
+<<<<<<< HEAD
 #plt.subplot(4,1,1)
 #plt.plot(V30)
 #plt.subplot(4, 1, 2)
 #plt.plot(V)
 #plt.subplot(4,1,3)
+=======
+
+#plt.subplot(4,1,1)
+#plt.plot(V30)
+
+#plt.subplot(4, 1, 2)
+#plt.plot(V)
+#plt.subplot(4,1,3)
+
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
 #plt.plot(Po)
 #plt.subplot(4,1,4)
 #plt.plot(Ntrades)

@@ -3,9 +3,16 @@ import time
 import dateparser
 import pytz
 import json
+<<<<<<< HEAD
 from datetime import datetime
 from binance.client import Client
 import urllib.request, json
+=======
+
+from datetime import datetime
+from binance.client import Client
+
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
 
 def date_to_milliseconds(date_str):
     """Convert UTC date to milliseconds
@@ -125,6 +132,7 @@ def get_historical_klines(symbol, interval, start_str, end_str=None):
 
     return output_data
 
+<<<<<<< HEAD
 with urllib.request.urlopen("https://www.binance.com/api/v1/ticker/allBookTickers") as url:
     data = json.loads(url.read().decode())    
 symbol=[d['symbol'] for d in data if 'BTC' in d['symbol']]
@@ -134,13 +142,25 @@ for symbol in symbol:
  start = "1 Jan, 2020"
  end = "2 Jan, 2020"
  interval = Client.KLINE_INTERVAL_1MINUTE
+=======
+for symbol in symbol:
+
+ symbol = symbol
+ start = "1 Feb, 2019"
+ end = "1 May, 2019"
+ interval = Client.KLINE_INTERVAL_5MINUTE
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
 
  klines = get_historical_klines(symbol, interval, start, end)
 
  # open a file with filename including symbol, interval and start and end converted to milliseconds
  with open(
+<<<<<<< HEAD
     #"Binance_{}_{}_{}-{}.json".format(
     "Binance_{}.json".format(
+=======
+    "Binance_{}_{}_{}-{}.json".format(
+>>>>>>> c65249dcadec79ba7f07e615a24f1c6b0a9f8df0
         symbol,
         interval,
         date_to_milliseconds(start),
